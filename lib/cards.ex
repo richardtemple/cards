@@ -20,7 +20,7 @@ defmodule Cards do
   def create_deck do
     values = ["Ace", "Two", "Three", "Four", "Five"]
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
-    
+
     for suit <- suits, value <- values do
       "#{value} of #{suit}"
     end
@@ -46,7 +46,7 @@ defmodule Cards do
   def load(filename) do
     #  {status, binary} = File.read(filename)
     case File.read(filename) do
-      {:ok, binary} -> :erlang.binary_to_term binary
+      {:ok, binary} -> :erlang.binary_to_term(binary)
       {:error, _reason} -> "That file does not exist"
     end
   end
